@@ -14,7 +14,7 @@ using namespace Halide;
 #include <iostream>
 
 // Some support code for timing and loading/saving images
-#include "halide/tutorial/image_io.h"
+#include "halide/tools/halide_image_io.h"
 #include "halide/tutorial/clock.h"
 
 // Include OpenCV for timing comparison
@@ -22,7 +22,7 @@ using namespace Halide;
 #include <opencv2/imgproc/imgproc.hpp>
 
 int main(int argc, char **argv) {
-    Image<float> in = load<float>("input.png");
+    Image<float> in = Tools::load_image("input.png");
 
     // Define a 7x7 Gaussian Blur with a repeat-edge boundary condition.
     float sigma = 1.5f;
@@ -81,7 +81,7 @@ int main(int argc, char **argv) {
         std::cout << "Time: " << (t2 - t1) << '\n';
     }
     
-    save(output, "output.png");
+    Tools::save_image(output, "output.png");
 
     // Time OpenCV doing the same thing.
     {
