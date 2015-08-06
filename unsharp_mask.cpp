@@ -2,7 +2,7 @@
 // the current directory. Then you should be able to compile this
 // file with:
 //
-// c++ -g unsharp_mask.cpp -std=c++11 -L halide/bin/ -lHalide `libpng-config --cflags --ldflags` -lopencv_core -lopencv_imgproc -O3
+// c++ -g unsharp_mask.cpp -std=c++11 -L halide/bin/ -lHalide `libpng-config --cflags --ldflags` -lopencv_core -lopencv_imgproc -lopencv_imgcodecs -O3
 //
 // You'll also need a multi-megapixel png image to run this on. Name
 // it input.png and put it in this directory.
